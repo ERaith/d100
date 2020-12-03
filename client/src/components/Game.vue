@@ -16,15 +16,15 @@
             }
         },
         async mounted() {
-            const game = await import('../game/game');
+            const game = await import('../game/index');
             this.downloaded = true;
             this.$nextTick(() => {
                 this.gameInstance = game.launch(this.containerId)
             })
         },
-        destroyed() {
-            this.gameInstance.destroy(false);
-        }
+        // destroyed() {
+        //     this.gameInstance.destroy(false);
+        // }
     }
 </script>
 
